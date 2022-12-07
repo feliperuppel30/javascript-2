@@ -8,3 +8,24 @@ seja, que evite a reprovação do aluno. No caso de a nota ser 38, o arredondame
 e o aluno será aprovado.
  */
 
+
+function avaliar(nota){
+    let notacorrigida = arredondar(nota)
+    if(notacorrigida>=40){
+        console.log(`aprovado com a nota ${notacorrigida}`)
+    } else{
+        console.log(`reprovado com nota ${notacorrigida}`)
+    }
+}
+function arredondar(nota){
+    if(nota%5 > 2){
+        return nota = nota + (5-(nota%5))
+    } else{
+        return nota
+    }
+} 
+avaliar(38)
+avaliar(39)
+avaliar(44)
+avaliar(33)
+avaliar(38)
