@@ -1,3 +1,13 @@
+Array.prototype.filter2 = function(callback){
+    const res = []
+    for(let i = 0; i<this.length; i++){
+        if(callback(this[i], i, this)){
+        res.push(this[i], i, this) 
+        }
+    }
+    return res
+}
+
 const produtos = [ 
     {nome: 'noteboook', preço: 8000, fragil:true},
     {nome: 'Ipad pro', preço: 5000, fragil:true},
@@ -5,15 +15,8 @@ const produtos = [
     {nome: 'suporte note', preço: 200, fragil:true},
     {nome: 'cabo usb', preço: 50, fragil:false},
 ]
-
-console.log(produtos.filter(function(p){
-    //if(p.preço>=5000 && p.fragil){
-        return false
-    }
-))
-
 const caro = produto => produto.preço >=5000
 const fragil = produto => produto.fragil
-const resultado = produtos.filter(caro).filter(fragil)
+const resultado = produtos.filter2(caro).filter2(fragil)
 
 console.log(resultado)
