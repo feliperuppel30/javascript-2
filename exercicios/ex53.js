@@ -5,4 +5,4 @@ const objparaarray = function(objeto){
     const resultado = chave.map(chave=>[chave, objeto[chave]])   
     return resultado
 }
-console.log(objparaarray({codigo:01, nome:'caneta'}))
+console.log(objparaarray({codigo:01, nome:'caneta'}))       
